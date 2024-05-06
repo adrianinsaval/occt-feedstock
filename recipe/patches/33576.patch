@@ -1,0 +1,13 @@
+diff --git a/src/BRepTools/BRepTools_NurbsConvertModification.cxx b/src/BRepTools/BRepTools_NurbsConvertModification.cxx
+index 85a30c63c6..fe4166ded8 100644
+--- a/src/BRepTools/BRepTools_NurbsConvertModification.cxx
++++ b/src/BRepTools/BRepTools_NurbsConvertModification.cxx
+@@ -521,7 +521,7 @@ Standard_Boolean BRepTools_NurbsConvertModification::NewPolygon(const TopoDS_Edg
+         gp_Pnt aPoint = aCurve->Value(aParam);
+         newParameter(aPoint, aNewCurve, aFirst, aLast, aTol, aParam);
+       }
+-    }
++    } else return Standard_False;
+   }
+   return Standard_True;
+ }
