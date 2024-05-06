@@ -1,0 +1,34 @@
+From ac95bbd7f205346b210dca4aaeddbcc6181b8f54 Mon Sep 17 00:00:00 2001
+From: blobfish <blobfish@gmx.com>
+Date: Fri, 28 Oct 2022 16:57:51 -0400
+Subject: [PATCH 14/18] ShapeUpgrade_UnifySameDomain: Fix segfault. See
+ following:
+
+  bfb# 000013
+
+  ShapeUpgrade_UnifySameDomain: make sure ReconstructMissedSeam worked and we have a NextEdge.
+
+  results of this change through occt public regression tests:
+    testgrid heal
+      No regressions
+      Total cases: 44 BAD, 1645 OK, 1051 SKIPPED
+      Elapsed time: 0 Hours 8 Minutes 36.385757 Seconds
+---
+ src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx b/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
+index 022fdc7915..c6092e4c02 100644
+--- a/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
++++ b/src/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.cxx
+@@ -3603,6 +3603,7 @@ void ShapeUpgrade_UnifySameDomain::IntUnifyFaces(const TopoDS_Shape& theInpShape
+               
+               ReconstructMissedSeam (RemovedEdges, F_RefFace, CurEdge, CurVertex, CurPoint,
+                                      Uperiod, Vperiod, NextEdge, NextPoint);
++              if (NextEdge.IsNull()) return; //return, break or continue?
+             }
+             else
+               return;
+-- 
+2.45.0
+
