@@ -1,3 +1,5 @@
+channel_targets:
+- freecad dev
 variant:
   - novtk
   - all
