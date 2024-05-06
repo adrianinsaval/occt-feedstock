@@ -27,8 +27,7 @@ source:
     - patches/0009-BRepFill_CompatibleWires-segfault.-See-following.patch
     - patches/0010-BRepFill_OffsetWire-segfault.-See-following.patch
     - patches/0011-ChFiDS_FilSpine-Allow-usage-of-externally-assigned-l.patch
-    # disabled due to abi incompatibility
-    #- patches/0012-Allow-blending-of-faces-less-than-5-degrees.-See-fol.patch
+    - patches/0012-Allow-blending-of-faces-less-than-5-degrees.-See-fol.patch
     - patches/0013-BRepFill_PipeShell-Fix-segfault-with-line-as-profile.patch
     - patches/0014-ShapeUpgrade_UnifySameDomain-Fix-segfault.-See-follo.patch
     - patches/0015-build-Expand-preprocessor-conditional-on-non-standar.patch
