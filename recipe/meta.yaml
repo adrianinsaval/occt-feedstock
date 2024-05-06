@@ -33,9 +33,8 @@ source:
     - patches/0015-build-Expand-preprocessor-conditional-on-non-standar.patch
     - patches/0016-IntPatch_Intersection-Consider-intersection-of-a-clo.patch
     - patches/0017-ChFi3d_Builder-Fix-blend-across-seam.-See-following.patch
-    - patches/0018-Fix-0033576-BRepTools_NurbsConvertModification-NewPo.patch
     # see https://tracker.dev.opencascade.org/view.php?id=33576 and https://github.com/FreeCAD/FreeCAD/issues/9760
-    - patches/33576.patch
+    - patches/0018-Fix-0033576-BRepTools_NurbsConvertModification-NewPo.patch
 
 build:
   number: {{ build }}
