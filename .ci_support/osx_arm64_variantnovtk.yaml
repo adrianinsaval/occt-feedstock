@@ -3,11 +3,11 @@ MACOSX_DEPLOYMENT_TARGET:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- freecad dev
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '15'
+- '16'
 fontconfig:
 - '2'
 freetype:
